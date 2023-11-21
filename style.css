@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+.relogio {
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  box-shadow: 0 0 15px #00000030;
+  border-radius: 50%;
+  position: relative;
+}
+
+.relogio .numero {
+  --rotacao: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotacao));
+  font-size: 20px;
+}
+
+.relogio .numero1 {
+  --rotacao: 30deg;
+}
+.relogio .numero2 {
+  --rotacao: 60deg;
+}
+.relogio .numero3 {
+  --rotacao: 90deg;
+}
+.relogio .numero4 {
+  --rotacao: 120deg;
+}
+.relogio .numero5 {
+  --rotacao: 150deg;
+}
+.relogio .numero6 {
+  --rotacao: 180deg;
+}
+.relogio .numero7 {
+  --rotacao: 210deg;
+}
+.relogio .numero8 {
+  --rotacao: 240deg;
+}
+.relogio .numero9 {
+  --rotacao: 270deg;
+}
+.relogio .numero10 {
+  --rotacao: 300deg;
+}
+.relogio .numero11 {
+  --rotacao: 330deg;
+}
+
+.relogio .ponteiro {
+  --rotacao: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  background-color: #000;
+  width: 10px;
+  height: 50%;
+  transform: translate(-50%) rotate(calc(var(--rotacao) * 1deg));
+  transform-origin: bottom;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.relogio::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+  background-color: black;
+  height: 15px;
+  width: 15px;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.relogio .ponteiro.horas {
+  width: 8px;
+  height: 30%;
+  background-color: black;
+}
+
+.relogio .ponteiro.minutos {
+  width: 6px;
+  height: 40%;
+  background-color: black;
+}
+
+.relogio .ponteiro.segundos {
+  width: 2px;
+  height: 45%;
+  background-color: red;
+}
